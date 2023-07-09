@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vharatyk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 09:35:53 by vharatyk          #+#    #+#             */
-/*   Updated: 2023/07/08 16:13:16 by vharatyk         ###   ########.fr       */
+/*   Created: 2023/07/09 15:38:45 by vharatyk          #+#    #+#             */
+/*   Updated: 2023/07/09 15:48:49 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, const char *src, unsigned int n)
+char	*ft_strlowcase(char *str)
 {
-	unsigned int	i;
+	int		i;
+	char	car;
 
-	i = 0;
-	while (*(src + i) != '\0' && i < n)
+	i = 0 ;
+	while (*(str + i) != '\0')
 	{
-		*(dest + i) = *(src + i);
-		i++;
+		car = *(str + i);
+		if (car >= 65 && car <= 90)
+		{
+			str[i] = str[i] + 32;
+		}
+		else
+		{
+			i++;
+		}
 	}
-	while (i < n)
-	{
-		*(dest + i) = '\0';
-		i++;
-	}
-	return (dest);
+	return (0);
 }
 /*
 #include<stdio.h>
-#include<string.h>
+#include<unistd.h>
 
 int main (void){
-char	chaine1[]="                   ";
-char	*chaine2;
-int	size;
-chaine2 = "salut a tous";
-size = 10 ;
-printf("%s \n",ft_strncpy(chaine1,chaine2,size));
-printf("%s",strncpy(chaine1,chaine2,size));
-return 0 ;
+char	test[]="QAFFw65^#";
+ft_strlowcase(test);
+printf("%s",test);
+
 }*/

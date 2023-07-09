@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vharatyk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 08:53:47 by vharatyk          #+#    #+#             */
-/*   Updated: 2023/07/08 14:59:58 by vharatyk         ###   ########.fr       */
+/*   Created: 2023/07/09 11:58:38 by vharatyk          #+#    #+#             */
+/*   Updated: 2023/07/09 12:18:13 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src)
+int	ft_str_is_lowercase(char *str)
 	{
-	int	i;
+	int		i;
+	char	car;
 
-	i = 0;
-	while (src[i] != '\0')
+	i = 0 ;
+	if (*(str + i) == '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		return (1);
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (*(str + i) != '\0')
+	{
+		car = *(str + i);
+		if (car >= 97 && car <= 122)
+		{
+			return (1);
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return (0);
 }
 /*
-#include<unistd.h>
-#include<stdio.h>
-#include<string.h>
-int main (void)
-{
-char tws[]="bonjours";
-char test[]="heycia";
+int main (void){
+char	test[]="";
+int	value = 50 ;
+value = ft_str_is_lowercase(test);
+printf("%d",value);
 
-
-printf("%s\n",strncpy(tws,test,5));
-printf("%s",ft_strncpy(tws,test));
 }*/
