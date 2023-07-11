@@ -9,7 +9,6 @@
 /*   Updated: 2023/07/09 12:18:13 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 int	ft_str_is_lowercase(char *str)
 	{
@@ -17,29 +16,21 @@ int	ft_str_is_lowercase(char *str)
 	char	car;
 
 	i = 0 ;
-	if (*(str + i) == '\0')
-	{
-		return (1);
-	}
 	while (*(str + i) != '\0')
 	{
-		car = *(str + i);
-		if (car >= 97 && car <= 122)
+		if (str[i] < 'a' || str[i] > 'z')
 		{
-			return (1);
+			return (0);
 		}
-		else
-		{
-			i++;
-		}
+		i++;
 	}
-	return (0);
+	return (1);
 }
 /*
+#include <stdio.h>
 int main (void){
-char	test[]="";
+char	test[]="0";
 int	value = 50 ;
 value = ft_str_is_lowercase(test);
 printf("%d",value);
-
 }*/

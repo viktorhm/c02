@@ -10,35 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-
 int	ft_str_is_numeric(char *str)
 {
 	int		i;
-	char	car;
 
 	i = 0 ;
-	if (*(str + i) == '\0')
+	while (str[i] != '\0')
 	{
-		return (1);
-	}
-	while (*(str + i) != '\0')
-	{
-		car = *(str + i);
-		if (car >= 48 && car <= 57)
+		if (str[i] < '0' || str[i] > '9')
 		{
-			return (1);
+			return (0);
 		}
-		else
-		{
-			i++;
-		}	
+		i++;
 	}
-	return (0);
+	return (1);
 }
 /*
+#include<stdio.h>
 int main (void){
-char	test[]=":?><";
+char	test[]="51q";
 int	value = 50 ;
 value = ft_str_is_numeric(test);
 printf("%d",value);

@@ -13,30 +13,26 @@
 char	*ft_strlowcase(char *str)
 {
 	int		i;
-	char	car;
 
 	i = 0 ;
-	while (*(str + i) != '\0')
+	while (str[i] != '\0')
 	{
-		car = *(str + i);
-		if (car >= 65 && car <= 90)
+		if (str[i] >= 65 && str[i] <= 90)
 		{
 			str[i] = str[i] + 32;
 		}
-		else
-		{
-			i++;
-		}
+		i++;
 	}
-	return (0);
+	return (str);
 }
 /*
 #include<stdio.h>
 #include<unistd.h>
 
 int main (void){
+
 char	test[]="QAFFw65^#";
+printf("%s",test);
 ft_strlowcase(test);
 printf("%s",test);
-
 }*/

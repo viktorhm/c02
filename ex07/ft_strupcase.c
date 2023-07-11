@@ -13,30 +13,25 @@
 char	*ft_strupcase(char *str)
 {
 	int		i;
-	char	car;
 
 	i = 0 ;
-	while (*(str + i) != '\0')
+	while (str[i] != '\0')
 	{
-		car = *(str + i);
-		if (car >= 97 && car <= 122)
+		if (str[i] >= 97 && str[i] <= 122)
 		{
 			str[i] = str[i] - 32;
 		}
-		else
-		{
-			i++;
-		}
+		i++;
 	}
-	return (0);
+	return (str);
 }
 /*
 #include<stdio.h>
 #include<unistd.h>
 
 int main (void){
-char	test[]="aqaq65^#";
-ft_strupcase(test);
-printf("%s",test);
 
+char	test[]="aqaq65^#";
+printf("%s",test);
+printf("%s",ft_strupcase(test));
 }*/

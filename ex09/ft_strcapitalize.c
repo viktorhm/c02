@@ -9,7 +9,6 @@
 /*   Updated: 2023/07/09 18:07:38 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
 
 char	test(char str)
 	{
@@ -60,7 +59,7 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 /*
-
+#include<stdio.h>
 int main (void){
 printf("test");
 char	test[]="je pense Que LA VIe doit ETRE $& 455";

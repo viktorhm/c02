@@ -9,36 +9,27 @@
 /*   Updated: 2023/07/09 15:10:53 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-#include <stdio.h>
 
 int	ft_str_is_printable(char *str)
 {
 	int		i;
-	char	car;
 
 	i = 0 ;
-	if (*(str + i) == '\0')
+	while (str[i] != '\0')
 	{
-		return (1);
-	}
-	while (*(str + i) != '\0')
-	{
-		car = *(str + i);
-		if (car >= 33 && car <= 126)
+		if (str[i] < ' ' || str[i] > '~')
 		{
-			return (1);
+			return (0);
 		}
-		else
-		{
-			i++;
-		}
+		i++;
 	}
-	return (0);
+	return (1);
 }
 /*
+#include <unistd.h>
+#include <stdio.h>
 int main (void){
-char	test[]="edeHF";
+char	test[]=" ";
 int	value = 50 ;
 value = ft_str_is_printable(test);
 printf("%d",value);

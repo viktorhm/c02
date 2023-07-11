@@ -9,34 +9,28 @@
 /*   Updated: 2023/07/09 11:36:03 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
-#include<stdio.h>
 
 int	ft_str_is_alpha(char *str)
 	{
 	int		i;
-	char	car;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	while (str[i] != '\0')
 	{
-		car = *(str + i);
-		if ((car >= 65 && car <= 90) || (car >= 97 && car <= 122))
+		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
 		{
-			return (1);
+			return (0);
 		}
-		else
-		{
-			i++;
-		}	
+		i++;
 	}
-	return (0);
+	return (1);
 }
 /*
+#include<unistd.h>
+#include<stdio.h>
 int main (void){
-char	test[]="12345679qweds";
+char	test[]="test";
 int	value = 50 ;
 value = ft_str_is_alpha(test);
 printf("%d",value);
-
 }*/

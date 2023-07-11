@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 	{
 	int	i;
 
@@ -29,10 +29,11 @@ char	*ft_strncpy(char *dest, char *src)
 #include<string.h>
 int main (void)
 {
-char tws[]="bonjours";
+char tws[]="bon";
 char test[]="heycia";
+printf("%s\n",strcpy(tws,test));
 
-
-printf("%s\n",strncpy(tws,test,5));
-printf("%s",ft_strncpy(tws,test));
+char test2[]="bon";
+char test1[]="heycia";
+printf("%s",ft_strcpy(test2,test1));
 }*/
